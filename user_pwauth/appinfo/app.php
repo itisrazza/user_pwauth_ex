@@ -25,8 +25,6 @@
 * 
 **/
 
-require_once('user_pwauth/user_pwauth.php');
-
 OCP\App::registerAdmin('user_pwauth','settings');
 
 // define UID_LIST (first - last user;user;user)
