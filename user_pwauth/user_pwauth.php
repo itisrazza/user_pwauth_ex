@@ -26,7 +26,7 @@
 
 namespace OCA\user_pwauth;
 
-class USER_PWAUTH extends \OC_User_Backend implements \OCP\UserInterface {
+class USER_PWAUTH extends \OC\User\Backend implements \OCP\UserInterface {
 	protected $pwauth_bin_path;
 	protected $pwauth_uid_list;
 	private $user_search;
