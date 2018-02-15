@@ -51,8 +51,8 @@ Changelog:
 - THIS VERSION WILL PROBABLY BE INCOMPATIBLE WITH OC < 8.2
 - Integrated patch from oni304 (basically a cleaner version with recent API)
 
-## VERSION 2.4.6
-- Version compatible with NextCloud 13
+## VERSION 2.4.8
+- Version compatible with NextCloud 13 thanks to @moonwolf-github #6
 - Admin settings are broken : API has changed since NC 10 and is not compatible with the old one anymore. Future version 2.5 should fix this
 
 Please test and give me your feedbacks in comments, this will be greatly appreciated :)
