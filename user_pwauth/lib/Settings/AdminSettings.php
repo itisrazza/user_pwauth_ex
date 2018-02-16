@@ -39,8 +39,8 @@ class AdminSettings implements ISettings {
 	
 	public function getForm() {
 		$parameters = [
-			'pwauth_path' => $this->config->getSystemValue('pwauth_path'),
-			'uid_list' => $this->config->getSystemValue('uid_list')
+			'pwauth_path' => $this->config->getAppValue('user_pwauth', 'pwauth_path'),
+			'uid_list' => $this->config->getAppValue('user_pwauth', 'uid_list')
 		];
 		return new TemplateResponse('user_pwauth', 'admin', $parameters);
 	}

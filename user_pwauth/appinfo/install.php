@@ -20,8 +20,8 @@
 $config = \OC::$server->getConfig();
 
 // if there is no path, just create it in config/config.php
-if ($config->getSystemValue('pwauth_path') === '') {
-	$config->setSystemValue('pwauth_path', '/usr/sbin/pwauth');
-	$config->setSystemValue('uid_list', '1000-1010');
+if ($config->getAppValue('user_pwauth', 'pwauth_path') === '') {
+	$config->setAppValue('user_pwauth', 'pwauth_path', '/usr/sbin/pwauth');
+	$config->setAppValue('user_pwauth', 'uid_list', '1000-1010');
 }
 ?>

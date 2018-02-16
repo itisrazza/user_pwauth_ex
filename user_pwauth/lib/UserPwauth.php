@@ -33,8 +33,8 @@ class UserPwauth extends \OC\User\Backend implements \OCP\UserInterface {
 
 	public function __construct() {
 		$config = \OC::$server->getConfig();
-		$this->pwauth_bin_path = $config->getSystemValue('pwauth_path');
-		$list = explode(";", $config->getSystemValue('uid_list'));
+		$this->pwauth_bin_path = $config->getAppValue('user_pwauth', 'pwauth_path');
+		$list = explode(";", $config->getAppValue('user_pwauth', 'uid_list'));
 		$r = array();
 		foreach($list as $entry) {
 			if(strpos($entry, '-') === FALSE) {
