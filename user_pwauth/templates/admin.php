@@ -16,4 +16,8 @@
 
 */
 ?>
-<h2>Unix User Authentication</h2>
+<div id="user_pwauth" class="section">
+	<h2>Unix User Authentication</h2>
+	<p>
+	</p>
+</div>

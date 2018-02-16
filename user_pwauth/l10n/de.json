@@ -1,0 +1,6 @@
+{ "translations": {
+	"pwauth_path" : "Pfad zu pwauth",
+	"uid_list" : "Liste der autorisierten UIDs",
+	"uid_list_original-title" : "Durch ';' getrennt oder einen UID-Bereich durch '-' getrennt zum Beispiel 1000-1003;1005"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}
