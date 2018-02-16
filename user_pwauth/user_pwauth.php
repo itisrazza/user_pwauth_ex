@@ -56,9 +56,7 @@ class USER_PWAUTH extends \OC\User\Backend implements \OCP\UserInterface {
 	// those functions are directly inspired by user_ldap
 	
 	public function implementsAction($actions) {
-		return (bool)((OC_USER_BACKEND_CHECK_PASSWORD
-				| OC_USER_BACKEND_SET_PASSWORD
-				) & $actions);
+		return (bool)((OC_USER_BACKEND_CHECK_PASSWORD) & $actions);
 	}
 	
 	private function userMatchesFilter($user) {
@@ -101,13 +99,6 @@ class USER_PWAUTH extends \OC\User\Backend implements \OCP\UserInterface {
                 return false;
 	}
 
-	public function setPassword( $uid, $password ) {
-		## Can't change the password whatever happened
-		## but this is the only way to enable mail address change 
-		## in the preferences
-		return false;
-	}
-	
 	public function userExists( $uid ){
 		$user = posix_getpwnam( strtolower($uid) );
 		return is_array($user);
