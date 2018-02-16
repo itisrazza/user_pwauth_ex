@@ -1,6 +1,6 @@
 { "translations": {
-	"pwauth_path" : "Path of the pwauth executable",
-	"uid_list" : "List of authorized UIDs",
+	"pwauth_path" : "Path of the pwauth executable: ",
+	"uid_list" : "List of authorized UIDs: ",
 	"uid_list_original-title" : "Separated by ';' or range of UIDs separated by '-' for instance 1000-1003;1005"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

@@ -26,18 +26,15 @@
 
 namespace OCA\UserPwauth;
 
-use ICP\IConfig;
-
 class UserPwauth extends \OC\User\Backend implements \OCP\UserInterface {
 	protected $pwauth_bin_path;
 	protected $pwauth_uid_list;
 	private $user_search;
 
 	public function __construct() {
-#		$this->pwauth_bin_path = $config->getAppValue('UserPwauth', 'pwauth_path', OC_USER_BACKEND_PWAUTH_PATH);
-#		$list = explode(";", $config->getAppValue('UserPwauth', 'uid_list', OC_USER_BACKEND_PWAUTH_UID_LIST));
-		$this->pwauth_bin_path = '/usr/sbin/pwauth';
-		$list = explode(";", '1000-1010');
+		$config = \OC::$server->getConfig();
+		$this->pwauth_bin_path = $config->getSystemValue('pwauth_path');
+		$list = explode(";", $config->getSystemValue('uid_list'));
 		$r = array();
 		foreach($list as $entry) {
 			if(strpos($entry, '-') === FALSE) {

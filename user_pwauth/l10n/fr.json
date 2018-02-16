@@ -1,6 +1,6 @@
 { "translations": {
-	"pwauth_path" : "Chemin vers l’exécutable pwauth",
-	"uid_list" : "Liste des UIDs autorisés",
+	"pwauth_path" : "Chemin vers l’exécutable pwauth : ",
+	"uid_list" : "Liste des UIDs autorisés : ",
 	"uid_list_original-title" : "Séparés par des ';' ou une plage d’UIDs séparée par un '-' par exemple 1000-1003;1005"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"
 }

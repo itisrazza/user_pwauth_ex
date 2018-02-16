@@ -19,15 +19,14 @@
 
 use OCP\AppFramework\App;
 
-$app = new App('userpwauth');
-error_log(var_dump($app));
+$app = new App('user_pwauth');
 $container = $app->getContainer();
 
 $container->query('OCP\INavigationManager')->add(function () use ($container) {
 	$l10n = $container->query('OCP\IL10N');
 	return [
 		// the string under which your app will be referenced in Nextcloud
-		'id' => 'userpwauth',
+		'id' => 'user_pwauth',
 
 		// sorting weight for the navigation. The higher the number, the higher
 		// will it be listed in the navigation
