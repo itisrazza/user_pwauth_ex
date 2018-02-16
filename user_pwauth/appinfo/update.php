@@ -19,7 +19,17 @@
 
 $config = \OC::$server->getConfig();
 if ($config->getSystemValue('pwauth_path') === '') {
-	$config->setSystemValue('pwauth_path', '/usr/sbin/pwauth');
-	$config->setSystemValue('uid_list', '1000-1010');
+	// if system value does not exist, checks if appvalue exists
+	if($config->getAppValue('user_pwauth', 'pwauth_path') === '') {
+		$config->setSystemValue('pwauth_path', '/usr/sbin/pwauth');
+		$config->setSystemValue('uid_list', '1000-1010');
+	} else {
+		// pwauth_path exists, copy it to system value
+		$config->setSystemValue('pwauth_path', $config->getAppValue('user_pwauth', 'pwauth_path'));
+		$config->setSystemValue('uid_list', $config->getAppValue('user_pwauth', 'uid_list'));
+		// and delete the old configuration
+		$config->deleteAppValue('user_pwauth', 'pwauth_path');
+		$config->deleteAppValue('user_pwauth', 'uid_list');
+	}
 }
 ?>
