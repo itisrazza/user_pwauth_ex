@@ -17,28 +17,27 @@
 
 */
 
-/**
-* ownCloud - user_pwauth
-*
-* @author Clément Véret
-* @copyright 2012 Clément Véret veretcle+owncloud@mateu.be
-* 
-**/
+use OCP\AppFramework\App;
 
-OCP\App::registerAdmin('user_pwauth','settings');
+$app = new App('userpwauth');
+error_log(var_dump($app));
+$container = $app->getContainer();
 
-// define UID_LIST (first - last user;user;user)
-define('OC_USER_BACKEND_PWAUTH_UID_LIST', '1000-1010');
-define('OC_USER_BACKEND_PWAUTH_PATH', '/usr/sbin/pwauth');
+$container->query('OCP\INavigationManager')->add(function () use ($container) {
+	$l10n = $container->query('OCP\IL10N');
+	return [
+		// the string under which your app will be referenced in Nextcloud
+		'id' => 'userpwauth',
 
+		// sorting weight for the navigation. The higher the number, the higher
+		// will it be listed in the navigation
+		'order' => 10,
 
-OC_User::useBackend(new \OCA\user_pwauth\USER_PWAUTH());
+		// the title of your application. This will be used in the
+		// navigation or on the settings page of your app
+		'name' => $l10n->t('Unix User Backend'),
+	];
+});
 
-// add settings page to navigation
-$entry = array(
-	'id' => 'user_pwauth_settings',
-	'order' => 1,
-	'href' => \OCP\Util::linkTo('user_pwauth', 'settings.php'),
-	'name' => 'PWAUTH'
-);
+OC_User::useBackend(new \OCA\UserPwauth\UserPwauth());
 ?>

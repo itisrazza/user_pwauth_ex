@@ -24,17 +24,20 @@
  *
  */
 
-namespace OCA\user_pwauth\settings;
+namespace OCA\UserPwauth\Settings;
 
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\Settings\ISettings;
 
 class AdminSettings implements ISettings {
+	$private appName;
+	
 	public function __construct() {
+		$this->appName = 'UserPwauth';
 	}
 	
 	public function getForm() {
-		return new TemplateResponse('user_pwauth', 'admin');
+		return new TemplateResponse($this->appName, 'admin');
 	}
 	
 	public function getSection() {

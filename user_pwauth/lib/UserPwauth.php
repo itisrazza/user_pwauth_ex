@@ -24,16 +24,20 @@
  *
  */
 
-namespace OCA\user_pwauth;
+namespace OCA\UserPwauth;
 
-class USER_PWAUTH extends \OC\User\Backend implements \OCP\UserInterface {
+use ICP\IConfig;
+
+class UserPwauth extends \OC\User\Backend implements \OCP\UserInterface {
 	protected $pwauth_bin_path;
 	protected $pwauth_uid_list;
 	private $user_search;
 
 	public function __construct() {
-		$this->pwauth_bin_path = \OC::$server->getAppConfig()->getValue('user_pwauth', 'pwauth_path', OC_USER_BACKEND_PWAUTH_PATH);
-		$list = explode(";", \OC::$server->getAppConfig()->getValue('user_pwauth', 'uid_list', OC_USER_BACKEND_PWAUTH_UID_LIST));
+#		$this->pwauth_bin_path = $config->getAppValue('UserPwauth', 'pwauth_path', OC_USER_BACKEND_PWAUTH_PATH);
+#		$list = explode(";", $config->getAppValue('UserPwauth', 'uid_list', OC_USER_BACKEND_PWAUTH_UID_LIST));
+		$this->pwauth_bin_path = '/usr/sbin/pwauth';
+		$list = explode(";", '1000-1010');
 		$r = array();
 		foreach($list as $entry) {
 			if(strpos($entry, '-') === FALSE) {

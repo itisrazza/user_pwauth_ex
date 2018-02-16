@@ -24,7 +24,7 @@
 	<author>Clément Véret</author>
 	<repository>https://github.com/veretcle/nextcloud-user_pwauth</repository>
 	<bugs>https://github.com/veretcle/nextcloud-user_pwauth/issues</bugs>
-	<require>8.0</require>
+	<namespace>UserPwauth</namespace>
 	<types>
 		<authentication/>
 	</types>
