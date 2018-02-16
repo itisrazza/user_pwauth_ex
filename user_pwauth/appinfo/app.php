@@ -20,23 +20,6 @@
 use OCP\AppFramework\App;
 
 $app = new App('user_pwauth');
-$container = $app->getContainer();
-
-$container->query('OCP\INavigationManager')->add(function () use ($container) {
-	$l10n = $container->query('OCP\IL10N');
-	return [
-		// the string under which your app will be referenced in Nextcloud
-		'id' => 'user_pwauth',
-
-		// sorting weight for the navigation. The higher the number, the higher
-		// will it be listed in the navigation
-		'order' => 10,
-
-		// the title of your application. This will be used in the
-		// navigation or on the settings page of your app
-		'name' => $l10n->t('Unix User Backend'),
-	];
-});
 
 OC_User::useBackend(new \OCA\UserPwauth\UserPwauth());
 ?>
