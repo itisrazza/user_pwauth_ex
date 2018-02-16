@@ -1,4 +1,3 @@
-Description:
 This backend allows Unix local users to authenticate and use ownCloud using pwauth project (https://code.google.com/p/pwauth/).
 
 If your ownCloud instance is on your desktop/laptop computer or your personnal server, you can use directly the PAM/Unix authentication instead of creating new accounts into ownCloud.
