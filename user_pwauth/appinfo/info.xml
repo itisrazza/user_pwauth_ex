@@ -22,8 +22,8 @@
 	<version>2.5.0</version>
 	<licence>AGPL</licence>
 	<author>Clément Véret</author>
-	<repository>https://github.com/veretcle/nextcloud-user_pwauth</repository>
-	<bugs>https://github.com/veretcle/nextcloud-user_pwauth/issues</bugs>
+	<repository>https://framagit.org/veretcle/user_pwauth</repository>
+	<bugs>https://framagit.org/veretcle/user_pwauth/issues</bugs>
 	<namespace>UserPwauth</namespace>
 	<types>
 		<authentication/>
