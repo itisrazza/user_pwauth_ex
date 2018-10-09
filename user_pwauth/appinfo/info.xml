@@ -21,7 +21,7 @@
 	<description>Authenticate Users by PAM</description>
 	<version>2.5.1</version>
 	<licence>AGPL</licence>
-	<author>Clément Véret</author>
+	<author>C. Véret</author>
 	<repository>https://framagit.org/veretcle/user_pwauth</repository>
 	<bugs>https://framagit.org/veretcle/user_pwauth/issues</bugs>
 	<namespace>UserPwauth</namespace>
