@@ -50,7 +50,6 @@ class UserPwauth extends \OC\User\Backend implements \OCP\UserInterface {
 			}
 		}
 
-
 		$this->pwauth_uid_list = $r;
 	}
 	
@@ -61,9 +60,9 @@ class UserPwauth extends \OC\User\Backend implements \OCP\UserInterface {
 	}
 	
 	private function userMatchesFilter($user) {
-                return (strripos($user, $this->user_search) !== false);
-        }
-	
+		return (strripos($user, $this->user_search) !== false);
+	}
+
 	public function deleteUser($_uid) {
 		// Can't delete user
 		OC::$server->getLogger()->error(
@@ -81,29 +80,28 @@ class UserPwauth extends \OC\User\Backend implements \OCP\UserInterface {
 		// checks if the Unix UID number is allowed to connect
 		if(empty($unix_user)) return false; //user does not exist
 		if(!in_array($unix_user['uid'], $this->pwauth_uid_list)) return false;
-		
-		
+
 		$handle = popen($this->pwauth_bin_path, 'w');
-                if ($handle === false) {
+		if ($handle === false) {
 			// Can't open pwauth executable
 			OC::$server->getLogger()->error(
 				'ERROR: Cannot open pwauth executable, check that it is installed on server.',
 				['app' => 'user_pwauth']
 			);
-                        return false;
-                }
- 
-                if (fwrite($handle, "$uid\n$password\n") === false) {
+			
+			return false;
+		}
+		if (fwrite($handle, "$uid\n$password\n") === false) {
 			// Can't pipe uid and password
-                        return false;
-                }
- 
-                # Is the password valid?
-	        $result = pclose( $handle );
-                if (0 === $result){
+			return false;
+		}
+		# Is the password valid?
+		$result = pclose( $handle );
+		if (0 === $result){
 			return $uid;
 		}
-                return false;
+
+		return false;
 	}
 
 	public function userExists( $uid ){
