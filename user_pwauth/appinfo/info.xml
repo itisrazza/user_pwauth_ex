@@ -18,16 +18,18 @@
 <info>
 	<id>user_pwauth</id>
 	<name>Unix user backend</name>
-	<description>Authenticate Users by PAM</description>
-	<version>2.5.3</version>
-	<licence>AGPL</licence>
+	<summary>Authenticate Users by PAM</summary>
+	<description>Allows you to authenticate with the local users from the hosting machine onto your hosted NextCloud instance.</description>
+	<version>2.5.5</version>
+	<licence>agpl</licence>
 	<author>C. Véret</author>
-	<repository>https://framagit.org/veretcle/user_pwauth</repository>
-	<bugs>https://framagit.org/veretcle/user_pwauth/issues</bugs>
 	<namespace>UserPwauth</namespace>
 	<types>
 		<authentication/>
 	</types>
+	<category>integration</category>
+	<bugs>https://framagit.org/veretcle/user_pwauth/issues</bugs>
+	<repository>https://framagit.org/veretcle/user_pwauth</repository>
 	<dependencies>
 		<nextcloud min-version="13" max-version="15" />
 	</dependencies>
