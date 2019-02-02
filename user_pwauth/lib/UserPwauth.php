@@ -66,7 +66,10 @@ class UserPwauth extends \OC\User\Backend implements \OCP\UserInterface {
 	
 	public function deleteUser($_uid) {
 		// Can't delete user
-		\OCP\Util::writeLog('OC_USER_PWAUTH', 'Not possible to delete local users from web frontend using unix user backend',3);
+		OC::$server->getLogger()->error(
+				'ERROR: Not possible to delete local users from web frontend using unix user backend',
+				['app' => 'user_pwauth']
+			);
 		return false;
 	}
 
@@ -83,7 +86,10 @@ class UserPwauth extends \OC\User\Backend implements \OCP\UserInterface {
 		$handle = popen($this->pwauth_bin_path, 'w');
                 if ($handle === false) {
 			// Can't open pwauth executable
-			\OCP\Util::writeLog('OC_USER_PWAUTH', 'Cannot open pwauth executable, check that it is installed on server.',3);
+			OC::$server->getLogger()->error(
+				'ERROR: Cannot open pwauth executable, check that it is installed on server.',
+				['app' => 'user_pwauth']
+			);
                         return false;
                 }
  
