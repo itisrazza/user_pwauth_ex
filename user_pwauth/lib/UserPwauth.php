@@ -19,8 +19,8 @@
 /**
  * ownCloud
  *
- * @author Clément Véret
- * @copyright 2012 Clément Véret veretcle+owncloud@mateu.be
+ * @author C. Véret
+ * @copyright 2012 C. Véret veretcle+owncloud@mateu.be
  *
  */
 
