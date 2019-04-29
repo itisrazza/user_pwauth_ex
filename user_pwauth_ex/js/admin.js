@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 	var saveSettings = {
 		success: function() {
@@ -13,10 +14,10 @@ $(document).ready(function(){
 	}
 	$('#user-pwauth-pwauth-path').focusout(function() {
 		OC.msg.startSaving('#user-pwauth-settings-msg');
-		OCP.AppConfig.setValue('user_pwauth', 'pwauth_path', $(this).val(), saveSettings);
+		OCP.AppConfig.setValue('user_pwauth_ex', 'pwauth_path', $(this).val(), saveSettings);
 	});
 	$('#user-pwauth-uid-list').focusout(function() {
 		OC.msg.startSaving('#user-pwauth-settings-msg');
-		OCP.AppConfig.setValue('user_pwauth', 'uid_list', $(this).val(), saveSettings);
+		OCP.AppConfig.setValue('user_pwauth_ex', 'uid_list', $(this).val(), saveSettings);
 	});
 });

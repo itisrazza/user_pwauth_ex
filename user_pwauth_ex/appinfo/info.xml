@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<info>
+  <id>user_pwauth_ex</id>
+  <name>UNIX (pwauth) user backend</name>
+  <summary>Authenticate Users by PAM</summary>
+  <description>Allows you to authenticate with the local users from the hosting machine onto your hosted NextCloud instance.</description>
+  <version>2.5.7</version>
+  <licence>agpl</licence>
+  <author>Raresh Nistor</author>
+  <namespace>UserPwauthEx</namespace>
+  <types>
+          <authentication/>
+  </types>
+  <category>integration</category>
+  <bugs>https://github.com/thegreatrazz/user_pwauth_ex/issues</bugs>
+  <repository>https://github.com/thegreatrazz/user_pwauth_ex</repository>
+  <dependencies>
+          <nextcloud min-version="13" max-version="16" />
+  </dependencies>
+  <settings>
+          <admin>OCA\UserPwauthEx\Settings\AdminSettings</admin>
+  </settings>
+</info>
